@@ -1,9 +1,9 @@
-import Hero from "@/components/intro/hero";
+import ChatHero from "@/components/intro/ChatHero";
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <ChatHero />
     </div>
   );
 };
