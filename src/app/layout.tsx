@@ -1,3 +1,5 @@
+import ChatHero from "@/components/intro/ChatHero";
+import Header from "@/components/layout/Header";
 import type { Metadata } from "next";
 import { Geist_Mono, Outfit } from "next/font/google";
 
@@ -28,6 +30,10 @@ const RootLayout = ({
       <body
         className={`${outfitSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ChatHero />
+
+        <Header />
+
         {children}
       </body>
     </html>
