@@ -2,6 +2,7 @@ import ChatHero from "@/components/intro/ChatHero";
 import Header from "@/components/layout/Header";
 import type { Metadata } from "next";
 import { Geist_Mono, Outfit } from "next/font/google";
+import Footer from "@/components/layout/Footer";
 
 import "./globals.css";
 
@@ -35,6 +36,8 @@ const RootLayout = ({
         <Header />
 
         {children}
+
+        <Footer />
       </body>
     </html>
   );

@@ -20,29 +20,55 @@ const Header = () => {
         <Container size="lg">
           <div className="w-full flex items-center justify-between gap-4">
             <div className="flex items-center justify-center gap-3">
-              <p className="text-xl font-bold leading-none text-right">
+              <Link
+                href="/"
+                className={cn(
+                  "relative left-0 text-xl font-bold leading-none transition-all",
+                  "hover:left-1",
+                )}
+              >
                 <span>Julian</span>{" "}
                 <span className="hidden lg:inline-block">D.</span>
                 <br />
                 <span className="hidden lg:inline-block">Suryawan</span>
-              </p>
-              <div className="hidden lg:inline-block w-24 h-12 bg-yellow-400 rounded-full transition-all"></div>
+              </Link>
+              {/* <div className="hidden lg:inline-block w-24 h-12 bg-yellow-400 rounded-full transition-all"></div> */}
             </div>
 
             {/* Menu for desktop */}
             <div className="hidden lg:flex items-center gap-8">
-              <Link href="#" className="font-medium">
+              {/* <Link href="#" className="font-medium">
                 Projects
               </Link>
+              <span className="text-gray-300">/</span> */}
+              <Link
+                href="#about"
+                className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
+              >
+                About
+              </Link>
               <span className="text-gray-300">/</span>
-              <Link href="#" className="font-medium">
+              <Link
+                href="#"
+                className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
+              >
                 Experience
               </Link>
               <span className="text-gray-300">/</span>
-              <Link href="#" className="font-medium">
+              <Link
+                href="#"
+                className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
+              >
                 Contact
               </Link>
               <span className="text-gray-300">/</span>
+              {/* <Link
+                href="#"
+                className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
+              >
+                How?
+              </Link>
+              <span className="text-gray-300">/</span> */}
               <button className="flex items-center justify-center gap-2">
                 <span>CV</span>
                 <Download className="w-4 h-4" />
@@ -73,8 +99,15 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed z-40 top-0 left-0 w-screen h-screen bg-white/30 backdrop-blur-md">
           <div className="flex flex-col gap-6 w-full px-10 pt-20">
-            <Link href="#" className="text-xl font-medium">
+            {/* <Link href="#" className="text-xl font-medium">
               Projects
+            </Link> */}
+            <Link
+              href="#"
+              className="text-xl font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
             </Link>
             <Link href="#" className="text-xl font-medium">
               Experience
@@ -82,6 +115,9 @@ const Header = () => {
             <Link href="#" className="text-xl font-medium">
               Contact
             </Link>
+            {/* <Link href="#" className="text-xl font-medium">
+              How?
+            </Link> */}
             <button className="flex items-center gap-2">
               <span className="text-xl">CV</span>
               <Download className="w-5 h-5" />
