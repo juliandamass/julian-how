@@ -6,19 +6,25 @@ import Container from "../layout/Container";
 import SectionTitle from "../section/SectionTitle";
 
 const About = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1 1"],
+    target: aboutRef,
+    offset: ["0 1.1", "0 -0.1"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.4, 0.7], [0.5, 1, 1]);
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.8, 1],
+    ["100px", "0px", "0px", "-100px"],
+  );
 
   return (
-    <motion.div style={{ scale }}>
-      <section id="about" className="py-20 lg:py-36">
-        <Container>
+    <section id="about" className="py-12 lg:py-24">
+      <Container>
+        <motion.div ref={aboutRef} style={{ scale, y }}>
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-20">
             <SectionTitle number={1} title="About" />
             <div>
@@ -37,9 +43,9 @@ const About = () => {
               </p>
             </div>
           </div>
-        </Container>
-      </section>
-    </motion.div>
+        </motion.div>
+      </Container>
+    </section>
   );
 };
 

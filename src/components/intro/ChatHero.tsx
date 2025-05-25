@@ -15,7 +15,7 @@ const ChatHero = () => {
           <div className="flex items-end gap-4">
             <div className="shrink-0 w-20 h-20 bg-blue-400 border-8 border-blue-100 rounded-full">
               <Image
-                src="/images/client-6.webp"
+                src="/images/avatars/client-6.webp"
                 alt="Julian"
                 width="80"
                 height="80"
@@ -37,7 +37,7 @@ const ChatHero = () => {
           <div className="place-self-end flex flex-row-reverse items-end gap-4">
             <div className="shrink-0 w-20 h-20 bg-yellow-400 border-8 border-yellow-100 rounded-full overflow-hidden">
               <Image
-                src="/images/avatar-1.webp"
+                src="/images/avatars/avatar-1.webp"
                 alt="Julian"
                 width="80"
                 height="80"

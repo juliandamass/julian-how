@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Download } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import SmoothScrollLink from "../ui/SmoothScrollLink";
 import Container from "./Container";
 
 const Header = () => {
@@ -41,26 +42,26 @@ const Header = () => {
                 Projects
               </Link>
               <span className="text-gray-300">/</span> */}
-              <Link
+              <SmoothScrollLink
                 href="#about"
                 className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
               >
                 About
-              </Link>
+              </SmoothScrollLink>
               <span className="text-gray-300">/</span>
-              <Link
-                href="#"
+              <SmoothScrollLink
+                href="#experience"
                 className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
               >
                 Experience
-              </Link>
+              </SmoothScrollLink>
               <span className="text-gray-300">/</span>
-              <Link
-                href="#"
+              <SmoothScrollLink
+                href="#contact"
                 className="font-medium hover:text-gray-600 hover:scale-105 transition-all"
               >
                 Contact
-              </Link>
+              </SmoothScrollLink>
               <span className="text-gray-300">/</span>
               {/* <Link
                 href="#"
@@ -69,10 +70,15 @@ const Header = () => {
                 How?
               </Link>
               <span className="text-gray-300">/</span> */}
-              <button className="flex items-center justify-center gap-2">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/files/cv.pdf"
+                className="flex items-center justify-center gap-2"
+              >
                 <span>CV</span>
                 <Download className="w-4 h-4" />
-              </button>
+              </a>
             </div>
 
             {/* Menu for mobile */}
@@ -102,26 +108,39 @@ const Header = () => {
             {/* <Link href="#" className="text-xl font-medium">
               Projects
             </Link> */}
-            <Link
-              href="#"
+            <SmoothScrollLink
+              href="#about"
               className="text-xl font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               About
-            </Link>
-            <Link href="#" className="text-xl font-medium">
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#experience"
+              className="text-xl font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Experience
-            </Link>
-            <Link href="#" className="text-xl font-medium">
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#contact"
+              className="text-xl font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Contact
-            </Link>
+            </SmoothScrollLink>
             {/* <Link href="#" className="text-xl font-medium">
               How?
             </Link> */}
-            <button className="flex items-center gap-2">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/files/cv.pdf"
+              className="flex items-center gap-2"
+            >
               <span className="text-xl">CV</span>
               <Download className="w-5 h-5" />
-            </button>
+            </a>
           </div>
         </div>
       )}
